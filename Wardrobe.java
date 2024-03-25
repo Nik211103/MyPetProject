@@ -23,26 +23,6 @@ public class Wardrobe {
         System.out.println("Новый предмет \"" + title + "\" успешно добавлен в гардероб.");
     }
 
-    // Метод для просмотра всех предметов в гардеробе
-    public void viewItems() {
-        sortByDateAdded(true); // Сортировка по возрастанию даты добавления
-
-        if (items.isEmpty()) {
-            System.out.println("В гардеробе нет предметов одежды.");
-        } else {
-            System.out.println("Предметы в гардеробе:");
-            for (Item item : items) {
-                System.out.println("Название: " + item.getTitle());
-                System.out.println("Категория: " + item.getCategory());
-                System.out.println("Размер: " + item.getSize());
-                System.out.println("Цвет: " + item.getColor());
-                System.out.println("Стиль: " + item.getStyle());
-                System.out.println("Дата добавления: " + item.getDateAdded());
-                System.out.println("----------------------");
-            }
-        }
-    }
-
 
     // Метод для редактирования информации о предмете
     public void editItem(int itemId, String title, String category, String size, String color, String style, Date dateAdded) {
@@ -73,26 +53,6 @@ public class Wardrobe {
         }
     }
 
-    // Метод для поиска предмета из гардероба
-    public void findItem(String title) {
-        boolean found = false;
-        for (Item item : items) {
-            if (item.getTitle().equals(title)) {
-                System.out.println("Предмет найден:");
-                System.out.println("Название: " + item.getTitle());
-                System.out.println("Категория: " + item.getCategory());
-                System.out.println("Размер: " + item.getSize());
-                System.out.println("Цвет: " + item.getColor());
-                System.out.println("Стиль: " + item.getStyle());
-                System.out.println("Дата добавления: " + item.getDateAdded());
-                found = true;
-                break;
-            }
-        }
-        if (!found) {
-            System.out.println("Предмет с названием \"" + title + "\" не найден.");
-        }
-    }
 
     // Метод для фильтрации предметов по категории
     public void filterByCategory(String category) {
@@ -126,7 +86,4 @@ public class Wardrobe {
         return items;
     }
 
-    public void setItems(List<Item> items) {
-        this.items = items;
-    }
 }

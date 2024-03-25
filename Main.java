@@ -20,6 +20,7 @@ public class Main {
             System.out.println("4. Выход");
 
             choice = scanner.nextInt();
+            scanner.nextLine(); // Очистка буфера ввода
 
             switch (choice) {
                 case 1:
@@ -76,6 +77,7 @@ public class Main {
             System.out.println("Ошибка: Все поля должны быть заполнены.");
             return false;
         }
+
         return true;
     }
 
